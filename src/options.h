@@ -115,6 +115,7 @@ struct __fehoptions {
 	unsigned int thumb_redraw;
 	double reload;
 	int sort;
+	int jump_interval;
 	int version_sort;
 	int debug;
 	int geom_enabled;
@@ -256,6 +257,7 @@ OPTION_auto_reload,
 OPTION_class,
 OPTION_no_conversion_cache,
 OPTION_window_id,
+OPTION_jump_interval
 };
 
 //typedef enum __fehoption fehoption;
@@ -294,6 +296,7 @@ enum key_action {
 	EVENT_close,
 	EVENT_remove,
 	EVENT_delete,
+	EVENT_jump_interval,
 	EVENT_jump_first,
 	EVENT_jump_last,
 	EVENT_action_0,

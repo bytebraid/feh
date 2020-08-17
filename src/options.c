@@ -67,6 +67,7 @@ void init_parse_options(int argc, char **argv)
 
 	opt.start_list_at = NULL;
 	opt.jump_on_resort = 1;
+	opt.jump_interval = 30;
 
 	opt.screen_clip = 1;
 	opt.cache_size = 4;
@@ -438,6 +439,7 @@ static void feh_parse_option_array(int argc, char **argv, int finalrun)
 		{"class"         , 1, 0, OPTION_class},
 		{"no-conversion-cache", 0, 0, OPTION_no_conversion_cache},
 		{"window-id", 1, 0, OPTION_window_id},
+		{"jump-interval", 1, 0, OPTION_jump_interval},
 		{0, 0, 0, 0}
 	};
 	int optch = 0, cmdx = 0;
@@ -859,6 +861,8 @@ static void feh_parse_option_array(int argc, char **argv, int finalrun)
 			} else {
 				opt.zoom_rate = 1 + ((float)opt.zoom_rate / 100);
 			}
+		case OPTION_jump_interval:
+			opt.jump_interval = atoi(optarg);
 			break;
 		default:
 			break;
